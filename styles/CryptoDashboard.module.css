@@ -1,0 +1,306 @@
+/* styles/CryptoDashboard.module.css */
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a202c;
+    color: white;
+    padding: 1.5rem;
+  }
+  
+  .card {
+    width: 70%;
+    /* max-width: 32rem; */
+    background-color: #2d3748;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    position: relative;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    background-color: #2d3748;
+    color: white;
+    border: 1px solid #4a5568;
+    margin-bottom: 1rem;
+    outline: none;
+  }
+  
+  .input:focus {
+    box-shadow: 2px solid #3182ce;
+  }
+  
+  .button {
+    width: 100%;
+    background-color: #3182ce;
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #2b6cb0;
+  }
+  
+  .table {
+    width: 100%;
+    text-align: left;
+    font-size: 0.875rem;
+    color: #e2e8f0;
+    border-collapse: collapse;
+    border: 1px solid #4a5568;
+  }
+  
+  .table th,
+  .table td {
+    padding: 0.75rem;
+  }
+  
+  .table th {
+    background-color: #4a5568;
+  }
+  
+  .table tr:hover {
+    background-color: #2d3748;
+    cursor: pointer;
+  }
+  
+  /* Modal Overlay */
+  .modalOverlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+  }
+  
+  /* Modal Container - Independent from table width */
+  .modal {
+    background-color: #2d3748;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    width: 80%;
+    height: 90%;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+    margin: 0 2rem;    /* Added margin to give space from edges */
+  }
+  
+  /* Modal Header */
+  .modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    width: 100%;
+    position: relative; /* Make the container position relative */
+  }
+  
+  /* Close Button */
+  .buttonClose {
+    background-color: #e53e3e;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    color: white;
+    transition: background-color 0.3s;
+    position: absolute;  /* This will position it independently */
+    right: 1rem;         /* Align the button to the right */
+    top: 50%;            /* Vertically center the button */
+    transform: translateY(-50%);
+  }
+  
+  .buttonClose:hover {
+    background-color: #c53030;
+  }
+  
+  /* Select Dropdown */
+  .select {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    background-color: #2d3748;
+    color: white;
+    border: 1px solid #4a5568;
+    margin-bottom: 1rem;
+  }
+  
+  /* Chart Container */
+  .chartContainer {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Ensure the chart takes up all available space */
+  .chart {
+    width: 100% !important;  /* Full width */
+    height: 80% !important;  /* Increased height to fill the modal */
+  }
+  
+
+  /* styles/CryptoDashboard.module.css */
+
+/* ... (previous styles) ... */
+
+/* Responsive Design */
+
+/* Tablet Styles */
+@media (max-width: 768px) {
+    .card {
+      width: 90%; /* Increase card width on tablets */
+    }
+  
+    .modal {
+      width: 90%;
+      height: 80%;
+      padding: 1.5rem;
+    }
+  
+    .modalHeader {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .buttonClose {
+      right: 0;
+      top: 0;
+      transform: translateY(0); /* Place the close button at the top right corner */
+    }
+  
+    .chart {
+      width: 90% !important;  /* Adjust chart size for tablets */
+      height: 70% !important;
+    }
+  
+    .table th, .table td {
+      padding: 0.5rem; /* Smaller padding for tables on tablets */
+    }
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 480px) {
+    .container {
+      padding: 1rem; /* Adjust container padding on mobile */
+    }
+  
+    .card {
+      width: 95%; /* Increase card width on mobile */
+      padding: 1rem;
+    }
+  
+    .title {
+      font-size: 1.5rem; /* Smaller title size on mobile */
+    }
+  
+    .input {
+      padding: 0.5rem;
+    }
+  
+    .button {
+      padding: 0.5rem;
+    }
+  
+    .table {
+      font-size: 0.75rem; /* Smaller font size for table on mobile */
+    }
+  
+    .modal {
+      width: 90%;
+      height: 80%;
+      padding: 1rem;
+    }
+  
+    .modalHeader {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .buttonClose {
+      right: 0;
+      top: 0;
+      transform: translateY(0); /* Place the close button at the top right corner */
+    }
+  
+    .chart {
+      width: 100% !important;  /* Full width for mobile */
+      height: 60% !important;  /* Adjust height for better mobile display */
+    }
+  }
+  
+  /* Ultra-Small Screen Styles (Below 375px) */
+  @media (max-width: 375px) {
+    .container {
+      padding: 0.75rem; /* Reduce padding further on very small screens */
+    }
+  
+    .card {
+      width: 100%; /* Full width of the screen on very small devices */
+      padding: 0.75rem;
+    }
+  
+    .title {
+      font-size: 1.25rem; /* Smaller title size */
+    }
+  
+    .input {
+      padding: 0.5rem;
+      font-size: 0.875rem; /* Smaller font size for inputs */
+    }
+  
+    .button {
+      padding: 0.5rem;
+      font-size: 0.875rem; /* Smaller font size for buttons */
+    }
+  
+    /* Adjusting the table for smaller screens */
+    .table {
+      font-size: 0.7rem; /* Smaller table font size */
+      overflow-x: auto; /* Allow horizontal scrolling if needed */
+      display: block; /* Make the table a block element for scroll */
+    }
+  
+    .table th,
+    .table td {
+      padding: 0.5rem; /* Smaller padding */
+      white-space: nowrap; /* Prevent text from wrapping inside table cells */
+    }
+  
+    .table th {
+      background-color: #4a5568;
+    }
+  
+    .table tr:hover {
+      background-color: #2d3748;
+      cursor: pointer;
+    }
+  
+    /* Adjusting the chart size for ultra-small screens */
+    .chart {
+      width: 100% !important;  /* Full width for mobile */
+      height: 50% !important;  /* Reduce height to make it more visible */
+    }
+  }
+  
