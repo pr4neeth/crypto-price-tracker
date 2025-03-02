@@ -1,7 +1,6 @@
-// pages/index.js
 import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import styles from "../styles/CryptoDashboard.module.css"; // Import the styles
+import styles from "../styles/CryptoDashboard.module.css";
 import { fetchCryptoHistory, fetchCryptoPrices } from "./api/api";
 import Table from "./components/table";
 import Modal from "./components/modal";
@@ -12,7 +11,7 @@ export default function CryptoDashboard() {
   const [selectedCoin, setSelectedCoin] = useState(null);
   const [interval, setInterval] = useState("d1"); // Default interval is 'd1' (1 day)
   const [isClient, setIsClient] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false); // Modal visibility state
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
@@ -37,30 +36,30 @@ export default function CryptoDashboard() {
         chart: {
           type: "line",
           toolbar: { show: false },
-          background: "#1f2937", // Set the background color if needed
+          background: "#1f2937",
         },
         theme: {
-          mode: "dark", // Ensure the chart uses dark mode for text visibility
+          mode: "dark",
         },
         xaxis: {
           categories: historyData.map((entry) => new Date(entry.time).toLocaleDateString()),
           labels: {
             style: {
-              colors: "#fff", // Set x-axis label text color to white
+              colors: "#fff",
             },
           },
         },
         yaxis: {
           labels: {
             style: {
-              colors: "#fff", // Set y-axis label text color to white
+              colors: "#fff", 
             },
           },
         },
         grid: {
-          borderColor: "#374151", // Change grid line color for better contrast
+          borderColor: "#374151",
         },
-        colors: ["#00E396"], // Line color
+        colors: ["#00E396"], 
       },
       series: [
         {
